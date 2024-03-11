@@ -20,11 +20,11 @@ db.sequelize = sequelize;
 db.userModel = userModel(sequelize, DataTypes);
 db.todoModel = todoModel(sequelize, DataTypes);
 
-db.userModel.hasMany(db.todoModel, { as: "todolist" });
-db.todoModel.belongsTo(db.userModel, {
-  foreignKey: "userId",
-  as: "users",
-});
+// db.userModel.hasMany(db.todoModel, { as: "todolist" });
+// db.todoModel.belongsTo(db.userModel, {
+//   foreignKey: "userId",
+//   as: "users",
+// });
 
 module.exports = db;
 

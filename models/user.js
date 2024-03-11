@@ -17,5 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     freezeTableName: true,
   })
+  user.associate = models => {
+    user.hasMany(models.todo, {
+      foreignKey: 'userId'
+    });
+  }
   return user;
 }

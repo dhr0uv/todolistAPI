@@ -38,7 +38,10 @@ const loginUser = async (req, res) => {
         });
         console.log(token);
         res.cookie("jwt", token, { maxAge: 1 * 24 * 60 * 60, httpOnly: true });
-        return res.status(201).send(user);
+        return res.status(201).send({
+          userName: userName,
+          token: token
+        });
       } else {
         return res.status(401).send("Authentication failed");
       }

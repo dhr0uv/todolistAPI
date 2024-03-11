@@ -17,5 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: true,
     freezeTableName: true,
   })
+  todo.associate = (models) => {
+    todo.belongsTo(models.user, {
+      foreignKey: 'userId'
+    });
+  }
   return todo;
 };
